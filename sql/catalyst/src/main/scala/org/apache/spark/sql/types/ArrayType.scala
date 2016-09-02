@@ -76,6 +76,8 @@ case class ArrayType(elementType: DataType, containsNull: Boolean) extends DataT
   override def defaultSize: Int = 100 * elementType.defaultSize
 
   override def simpleString: String = s"array<${elementType.simpleString}>"
+  
+  override def catalogString: String = s"array<${elementType.catalogString}>"
 
   override def sql: String = s"ARRAY<${elementType.sql}>"
 
